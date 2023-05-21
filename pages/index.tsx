@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
-import { Htags, Button, P } from "../components";
+import React, { useEffect, useState } from "react";
+import { Htags, Button, P, Rating } from "../components";
 import { Tag } from "../components/Tag/Tag";
+import { withLayout } from "../layout/Layout";
 function Home(): JSX.Element {
+  const [rating, setRating] = useState(4);
+
   useEffect(() => {
     console.log("homme");
   });
 
   return (
-    <div>
+    <>
       <Htags tag="h1">Home</Htags>
       <Button apperance="ghost" arrow="right">
         Button
@@ -30,8 +33,9 @@ function Home(): JSX.Element {
       <Tag size="m" color="grey">
         Adobe photoshop
       </Tag>
-    </div>
+      <Rating isEditable={true} rating={rating} setRating={setRating} />
+    </>
   );
 }
 
-export default Home;
+export default withLayout(Home);

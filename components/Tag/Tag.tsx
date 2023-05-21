@@ -17,11 +17,15 @@ export const Tag = ({
   size = "m",
   href,
   color = "ghost",
+  className,
   children,
   ...props
 }: TagProps): JSX.Element => {
   return (
-    <div className={cn(styles.tag, styles[size], styles[color])} {...props}>
+    <div
+      className={cn(styles.tag, className, styles[size], styles[color])}
+      {...props}
+    >
       {href ? <a href={href}>{children}</a> : <>{children}</>}
     </div>
   );

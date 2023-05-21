@@ -11,9 +11,14 @@ interface PProps
   children: ReactNode;
 }
 
-export const P = ({ size = "m", children, ...props }: PProps): JSX.Element => {
+export const P = ({
+  size = "m",
+  children,
+  className,
+  ...props
+}: PProps): JSX.Element => {
   return (
-    <p className={cn(styles.p, styles[size])} {...props}>
+    <p className={cn(styles.p, className, styles[size])} {...props}>
       {children}
     </p>
   );
