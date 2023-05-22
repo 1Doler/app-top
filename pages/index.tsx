@@ -8,11 +8,6 @@ import { IMenuItem } from "../interfaces/menu.interface";
 
 function Home({ menu }: HomeProps): JSX.Element {
   const [rating, setRating] = useState(4);
-
-  useEffect(() => {
-    console.log("homme");
-  });
-
   return (
     <>
       <Htags tag="h1">Home</Htags>
@@ -38,11 +33,6 @@ function Home({ menu }: HomeProps): JSX.Element {
         Adobe photoshop
       </Tag>
       <Rating isEditable={true} rating={rating} setRating={setRating} />
-      <ul>
-        {menu.map((item) => (
-          <li key={item._id.secondCategory}>{item._id.secondCategory}</li>
-        ))}
-      </ul>
     </>
   );
 }
