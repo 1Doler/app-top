@@ -1,0 +1,29 @@
+.item {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 40px;
+
+	margin: 30px 0;
+    
+}
+
+.hr {
+	height: 40%;
+	margin-left: 25px;
+
+	border-left: 2px solid #DFDFDF;
+}
+
+.title {
+	margin-bottom: 20px;
+
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 27px;
+}
+
+.desc {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 29px;
+}

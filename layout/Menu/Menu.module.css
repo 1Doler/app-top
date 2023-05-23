@@ -13,11 +13,11 @@
 	gap: 20px;
 }
 
-.firstLevel:hover span, .firstLevelActive span {
+.firstLevelActive span , .firstLevel:hover span {
 	color: var(--primary)
 }
 
-.firstLevel:hover svg, .firstLevelActive svg {
+.firstLevelActive svg, .firstLevel:hover svg {
 	fill: var(--primary)
 }
 

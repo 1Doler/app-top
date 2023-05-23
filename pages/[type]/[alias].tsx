@@ -1,18 +1,30 @@
 import React from "react";
-import { IMenuItem } from "../../interfaces/menu.interface";
-import { withLayout } from "../../layout/Layout";
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import axios from "axios";
-import { ITopPage, TopLevelCategory } from "../../interfaces/toppage.interface";
-import { ParsedUrlQuery } from "node:querystring";
-import { IProduct } from "../../interfaces/product.interface";
-import { firstLevelMenuItem } from "../../helpers/helpers";
 
-function Course({ menu, page, products }: CourseProps): JSX.Element {
-  return <>{products && products.length}</>;
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { ParsedUrlQuery } from "node:querystring";
+
+import { withLayout } from "../../layout/Layout";
+import { IMenuItem } from "../../interfaces/menu.interface";
+import { ITopPage, TopLevelCategory } from "../../interfaces/toppage.interface";
+import { IProduct } from "../../interfaces/product.interface";
+
+import { firstLevelMenuItem } from "../../helpers/helpers";
+import { TopPageComponents } from "../../page-components/index";
+
+function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
+  return (
+    <>
+      <TopPageComponents
+        firstCategory={firstCategory}
+        page={page}
+        products={products}
+      />
+    </>
+  );
 }
 
-export default withLayout(Course);
+export default withLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let paths: string[] = [];
@@ -32,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<CourseProps> = async ({
+export const getStaticProps: GetStaticProps<TopPageProps> = async ({
   params,
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
   if (!params) {
@@ -79,7 +91,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
   }
 };
 
-interface CourseProps extends Record<string, unknown> {
+interface TopPageProps extends Record<string, unknown> {
   menu: IMenuItem[];
   firstCategory: TopLevelCategory;
   page: ITopPage;
