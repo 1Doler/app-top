@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Htags, Button, P, Rating } from "../components";
+import { Htags, Button, P, Rating, Input, Textarea } from "../components";
 import { Tag } from "../components/Tag/Tag";
 import { withLayout } from "../layout/Layout";
 import { GetStaticProps } from "next";
@@ -33,6 +33,8 @@ function Home({ menu }: HomeProps): JSX.Element {
         Adobe photoshop
       </Tag>
       <Rating isEditable={true} rating={rating} setRating={setRating} />
+      <Input placeholder="text" />
+      <Textarea placeholder="text" />
     </>
   );
 }

@@ -19,7 +19,6 @@ export const Advantages = ({
   ...props
 }: AdvantagesProps): JSX.Element => {
   const buildAdvantages = () => {
-    console.log(advantages);
     return advantages.map((a) => {
       return (
         <div key={a._id} className={styles.item}>
