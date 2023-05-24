@@ -1,7 +1,13 @@
 import { ReactNode } from "react";
 import styles from "./Htags.module.css";
 
-interface HtagsProps {
+import { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
+
+interface HtagsProps
+  extends DetailedHTMLProps<
+    HtmlHTMLAttributes<HTMLHeadElement>,
+    HTMLHeadElement
+  > {
   tag: "h1" | "h2" | "h3";
   children: ReactNode;
 }

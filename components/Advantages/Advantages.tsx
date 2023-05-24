@@ -19,17 +19,14 @@ export const Advantages = ({
   ...props
 }: AdvantagesProps): JSX.Element => {
   const buildAdvantages = () => {
+    console.log(advantages);
     return advantages.map((a) => {
       return (
         <div key={a._id} className={styles.item}>
-          <div>
-            <LikeIcon />
-            <div className={styles.hr}></div>
-          </div>
-          <div className={styles.text}>
-            <p className={styles.title}>{a.title}</p>
-            <p className={styles.desc}>{a.description}</p>
-          </div>
+          <LikeIcon />
+          <p className={styles.title}>{a.title}</p>
+          <div className={styles.hr}></div>
+          <p className={styles.desc}>{a.description}</p>
         </div>
       );
     });

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Htags, Button, P, Rating } from "../components";
 import { Tag } from "../components/Tag/Tag";
 import { withLayout } from "../layout/Layout";
