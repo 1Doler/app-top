@@ -22,6 +22,7 @@ export interface IProduct {
   reviews: IReview[];
   reviewCount: number;
   reviewAvg?: number;
+  disadvantages: string;
 }
 
 export interface IProductCharacteristic {

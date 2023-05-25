@@ -22,7 +22,9 @@ export const Skills = ({
       <Htags tag={"h2"}>Получаемые навыки</Htags>
       <div className={styles.items}>
         {tags.map((t) => (
-          <Tag color="primary">{t}</Tag>
+          <Tag color="primary" key={t}>
+            {t}
+          </Tag>
         ))}
       </div>
     </div>

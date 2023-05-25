@@ -5,8 +5,8 @@ import {
   Htags,
   Skills,
   Tag,
-  Rating,
   SortEnum,
+  Product,
 } from "../../components";
 import { TopPageComponentProps } from "./TopPageComponent.props";
 
@@ -27,11 +27,10 @@ export const TopPageComponents = ({
       sort: SortEnum.Rating,
     }
   );
-
   const setSort = (sort: SortEnum) => {
     dispathSort({ type: sort });
   };
-
+  console.log(products);
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -45,7 +44,11 @@ export const TopPageComponents = ({
       </div>
       <div className={styles.products}>
         {sortProducts &&
-          sortProducts.map((p) => <div key={p._id}>{p.title}</div>)}
+          sortProducts.map((p) => (
+            <div key={p._id}>
+              <Product product={p} />
+            </div>
+          ))}
       </div>
       <div className={styles.hhTitle}>
         <Htags tag="h2">Вакансии - {page.category}</Htags>

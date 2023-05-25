@@ -1,5 +1,5 @@
 import styles from "./Sort.module.css";
-import { DetailedHTMLProps, HtmlHTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
 
 import SortIcon from "./sort.svg";
 import cn from "classnames";

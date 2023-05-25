@@ -1,0 +1,144 @@
+.product {
+	display: grid;
+	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 30px [ratestart] auto [end];
+
+	margin-bottom: 30px;
+	padding: 40px;
+}
+
+.logo {
+	grid-column: start/logoend;
+	grid-row: 1/ span 2;	
+
+}
+
+.logo img {
+	width: 70px;
+	height: 70px;
+	
+	border-radius: 5px;
+}
+
+.title, .tags{
+	align-items: flex-end !important;
+	grid-column: titlestart/middle;
+}
+
+.price, .priceTitle {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 19px;
+	grid-column: pricestart/priceend;
+}
+
+.credit, .creditTitle {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 19px;
+	grid-column: creditstart/creditend;
+	
+}
+
+.rating, .ratingTitle {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 19px;
+	grid-column: ratestart/end;
+}
+
+.product hr{
+	grid-column: start/end;
+
+	margin: 15px 0;
+
+	color: #EBEBEB;
+}
+
+.description {
+	grid-column: start/end;
+
+	margin-bottom: 14px;
+}
+
+.feature {
+	grid-column: start/middle;
+}
+
+.advBlock{
+	grid-column: middle/end;
+}
+
+.advantages{
+	margin-bottom: 20px;
+	padding-left: 15px;
+
+	border-left: 3px solid var(--green);
+	border-radius: 2px;
+}
+
+.disadvantages{
+	margin-bottom: 20px;
+	padding-left: 15px;
+
+	border-left: 3px solid var(--red);
+	border-radius: 2px;
+}
+
+.advantagesTitle{
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 22px;
+}
+
+.advantagesText{
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+}
+
+.actions {
+	grid-column: start/middle;
+}
+
+.actions button {
+	margin-right: 34px;
+}
+
+.price div, .credit div{
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 27px;
+}	
+
+.price, .credit {
+	display: flex;
+	align-items: flex-end
+}
+
+.title, .rating  {
+	display: flex;
+	align-items: flex-end
+}
+
+.characteristics {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+
+	padding-right: 60px;
+
+	font-size: 16px;
+	line-height: 32px;
+	gap: 10px
+}
+
+.characteristicsName {
+	margin-bottom: 10px;
+
+	font-weight: bold;
+}
+
+.characteristicsDots {
+	margin-bottom: 5px;
+
+	border-bottom: 1px dashed var(--grey-light);
+}
