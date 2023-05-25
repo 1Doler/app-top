@@ -1,10 +1,8 @@
 import styles from "./Product.module.css";
 import { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
-import cn from "classnames";
 import { IProduct } from "../../interfaces/product.interface";
 import { Htags, Card, Rating, Tag, P, Button } from "../index";
-import PremIcon from "./prem.svg";
-import { declOfNum } from "../../helpers/helpers";
+import { declOfNum, priceRu } from "../../helpers/helpers";
 
 interface ProductProps
   extends DetailedHTMLProps<
@@ -14,7 +12,7 @@ interface ProductProps
   product: IProduct;
 }
 
-export const Product = ({ product, className }: ProductProps): JSX.Element => {
+export const Product = ({ product }: ProductProps): JSX.Element => {
   return (
     <Card className={styles.product} key={product._id}>
       <div className={styles.logo}>
@@ -27,10 +25,10 @@ export const Product = ({ product, className }: ProductProps): JSX.Element => {
         <Htags tag="h3">{product.title}</Htags>
       </div>
       <div className={styles.price}>
-        <div>{product.price}</div>
+        <div>{priceRu(product.price)}</div>
       </div>
       <div className={styles.credit}>
-        <div>{product.credit}</div>
+        <div>{priceRu(product.credit)}</div>
       </div>
       <div className={styles.rating}>
         <Rating rating={product.reviewAvg ?? product.initialRating} />
@@ -49,7 +47,7 @@ export const Product = ({ product, className }: ProductProps): JSX.Element => {
         {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
       </div>
 
-      <hr color="#EBEBEB" />
+      <hr color="#EBEBEB" className={styles.hr} />
 
       <P size="m" className={styles.description}>
         {product.description}
@@ -77,7 +75,7 @@ export const Product = ({ product, className }: ProductProps): JSX.Element => {
           </div>
         )}
       </div>
-      <hr color="#EBEBEB" />
+      <hr color="#EBEBEB" className={styles.hr2} />
 
       <div className={styles.actions}>
         <Button apperance="primary">Узнать&nbsp;подробнее</Button>
