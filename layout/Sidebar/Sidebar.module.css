@@ -2,5 +2,6 @@
 	display: grid;
 	align-content: start;
 	gap: 20px;
+	justify-items: center;
 }
 

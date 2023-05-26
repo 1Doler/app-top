@@ -143,6 +143,27 @@
 	border-bottom: 1px dashed var(--grey-light);
 }
 
+.review{
+	transition: all 0.2s;
+}
+
+.rewiewclose{
+	overflow: hidden;
+
+	max-height: 0;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.rewiewopen {
+	overflow: hidden;
+	
+	max-height: auto;
+	padding: 30px;
+	margin-top: -34px;
+	margin-bottom: 30px;
+}
+
 @media (width <= 1320px) {
 	.product {
 		display: grid;

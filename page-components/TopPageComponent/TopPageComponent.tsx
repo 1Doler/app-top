@@ -28,7 +28,7 @@ export const TopPageComponents = ({
     }
   );
   const setSort = (sort: SortEnum) => {
-    dispathSort({ type: sort });
+    dispathSort({ type: sort, products });
   };
   console.log(products);
   return (
