@@ -24,7 +24,7 @@
 }
 
 
-@media (width <= 760px) {
+@media (width <= 980px) {
 	.wrapper {
 		display: grid;
     

@@ -1,7 +1,7 @@
 import styles from "./Product.module.css";
 import { DetailedHTMLProps, HtmlHTMLAttributes, useState } from "react";
 import { IProduct } from "../../interfaces/product.interface";
-import { Htags, Card, Rating, Tag, P, Button } from "../index";
+import { Htags, Card, Rating, Tag, P, Button, ReviewForm } from "../index";
 import { declOfNum, priceRu } from "../../helpers/helpers";
 import cn from "classnames";
 import { Review } from "../Review/Review";
@@ -104,8 +104,12 @@ export const Product = ({ product }: ProductProps): JSX.Element => {
         className={cn(styles.review, styles["rewiew" + isReviewOpened])}
       >
         {product.reviews.map((r) => (
-          <Review rewiew={r} key={r._id} />
+          <>
+            <Review rewiew={r} key={r._id} />
+            <hr color="#EBEBEB" className={styles.hr} />
+          </>
         ))}
+        <ReviewForm productId={product._id} />
       </Card>
     </>
   );

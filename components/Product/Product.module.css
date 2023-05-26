@@ -151,17 +151,21 @@
 	overflow: hidden;
 
 	max-height: 0;
-	padding: 0;
 	margin-bottom: 0;
+	padding: 0;
 }
 
 .rewiewopen {
 	overflow: hidden;
 	
 	max-height: auto;
-	padding: 30px;
 	margin-top: -34px;
 	margin-bottom: 30px;
+	padding: 30px;
+}
+
+.review hr {
+	margin-bottom: 20px;
 }
 
 @media (width <= 1320px) {
