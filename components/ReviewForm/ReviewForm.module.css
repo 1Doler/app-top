@@ -2,6 +2,8 @@
 	display: grid;
 	grid-template-columns: [start] auto [inpend] 30px [inp1] auto [inp1end] 1fr [rating] auto [end];
 	gap: 20px 30px;
+
+	align-items: center;
 }
 
 .name {
@@ -30,6 +32,9 @@
 
 .review{
 	grid-column: start/end;
+
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .submit {
@@ -40,19 +45,68 @@
 	margin-left: 10px;
 }
 
+.success {
+	position: relative;
+
+	margin-top: 20px;
+	padding: 20px;
+
+	border-radius: 5px;
+	background-color: var(--green-light);
+}
+
+.successTitle {
+	font-weight: bold;
+}
+
+.close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+
+	cursor: pointer;
+}
+
+.error {
+	position: relative;
+
+	margin-top: 20px;
+	padding: 20px;
+
+	border-radius: 5px;
+	background-color: var(--red);
+}
+
+.closeError{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+
+	cursor: pointer;
+
+	fill: white;
+}
+
+.errorDescription {
+	color: (--white);
+}
+
 @media (width <= 1320px) {
 	.rating {
+		display: flex;	
+		flex-direction: row;
+
+		margin-top: 20px;
 		grid-column: start/end;
 		justify-self: left;
-	
-		display: flex;
-		gap: 10px;
-	
-		flex-direction: row;
 	}
 }
 
 @media (width <= 650px) {
+	.reviewForm {
+		gap: 40px;
+	}
+
 	.name {
 		grid-column: start/end;
 	}

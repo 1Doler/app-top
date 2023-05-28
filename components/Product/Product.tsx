@@ -1,5 +1,5 @@
 import styles from "./Product.module.css";
-import { DetailedHTMLProps, HtmlHTMLAttributes, useState } from "react";
+import { DetailedHTMLProps, HtmlHTMLAttributes, useRef, useState } from "react";
 import { IProduct } from "../../interfaces/product.interface";
 import { Htags, Card, Rating, Tag, P, Button, ReviewForm } from "../index";
 import { declOfNum, priceRu } from "../../helpers/helpers";
@@ -14,13 +14,27 @@ interface ProductProps
   product: IProduct;
 }
 
-export const Product = ({ product }: ProductProps): JSX.Element => {
+export const Product = ({
+  product,
+  className,
+  ...props
+}: ProductProps): JSX.Element => {
   const [isReviewOpened, setIsReviewOpened] = useState<"open" | "close">(
     "close"
   );
 
+  const reviewRef = useRef<HTMLDivElement>(null);
+
+  const scrollToReview = () => {
+    setIsReviewOpened("open");
+    reviewRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <>
+    <div className={className} {...props}>
       <Card className={styles.product} key={product._id}>
         <div className={styles.logo}>
           <img
@@ -50,8 +64,10 @@ export const Product = ({ product }: ProductProps): JSX.Element => {
         <div className={styles.priceTitle}>цена</div>
         <div className={styles.creditTitle}>в кредит</div>
         <div className={styles.ratingTitle}>
-          {product.reviewCount}{" "}
-          {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          <a href="#ref" onClick={scrollToReview}>
+            {product.reviewCount}{" "}
+            {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          </a>
         </div>
 
         <hr color="#EBEBEB" className={styles.hr} />
@@ -100,17 +116,18 @@ export const Product = ({ product }: ProductProps): JSX.Element => {
         </div>
       </Card>
       <Card
+        ref={reviewRef}
         color="white"
         className={cn(styles.review, styles["rewiew" + isReviewOpened])}
       >
         {product.reviews.map((r) => (
-          <>
-            <Review rewiew={r} key={r._id} />
+          <div key={r._id}>
+            <Review rewiew={r} />
             <hr color="#EBEBEB" className={styles.hr} />
-          </>
+          </div>
         ))}
-        <ReviewForm productId={product._id} />
+        <ReviewForm productid={product._id} />
       </Card>
-    </>
+    </div>
   );
 };

@@ -221,6 +221,10 @@
 		grid-row: 4;
 	}
 
+	.ratingTitle a {
+		color: var(--primary)
+	}
+
 	.feature {
 		grid-column: start/end;
 	}

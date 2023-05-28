@@ -1,13 +1,38 @@
 import styles from "./Input.module.css";
-import { DetailedHTMLProps, InputHTMLAttributes, ReactNode } from "react";
+import {
+  DetailedHTMLProps,
+  ForwardedRef,
+  InputHTMLAttributes,
+  ReactNode,
+  forwardRef,
+} from "react";
 import cn from "classnames";
+import { FieldError, UseFormRegister } from "react-hook-form";
 
 interface InputProps
   extends DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
-  > {}
+  > {
+  register?: any;
+  error?: FieldError;
+}
 
-export const Input = ({ className, ...props }: InputProps): JSX.Element => {
-  return <input className={cn(styles.input, className)} {...props} />;
-};
+export const Input = forwardRef(
+  (
+    { register, error, className, ...props }: InputProps,
+    ref: ForwardedRef<HTMLInputElement>
+  ): JSX.Element => {
+    return (
+      <div className={cn(styles.wrapper, className)}>
+        <input
+          className={cn(styles.input, { [styles.error]: error })}
+          {...props}
+          ref={ref}
+          {...register}
+        />
+        {error && <span className={styles.errorMessage}>{error.message}</span>}
+      </div>
+    );
+  }
+);
