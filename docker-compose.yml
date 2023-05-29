@@ -1,8 +1,8 @@
 version: "3"
 services:
   app:
-    image: courses
-    container_name: courses
+    image: top-app-demo
+    container_name: top-app-demo
     restart: always
     ports:
       - 3000:3000
