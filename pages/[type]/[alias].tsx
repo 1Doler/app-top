@@ -18,10 +18,19 @@ function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
   return (
     <>
       <Head>
-        <title>{page.title}</title>
-        <meta name="description" content={page.metaDescription} />
-        <meta property="og:title" content={page.title} />
-        <meta property="og:description" content={page.metaDescription} />
+        <title>{page?.title ? page.title : "title"}</title>
+        <meta
+          name="description"
+          content={page?.metaDescription ? page.metaDescription : "desc"}
+        />
+        <meta
+          property="og:title"
+          content={page?.title ? page.title : "title"}
+        />
+        <meta
+          property="og:description"
+          content={page?.metaDescription ? page.metaDescription : "desc"}
+        />
         <meta property="og:type" content="article" />
       </Head>
       <TopPageComponents
