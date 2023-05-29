@@ -45,23 +45,20 @@
 }
 
 .secondLevelBlock {
-	display: none;
-}
-
-.secondLevelOpened {
-	display: block;
-}
-
-.secondLevelOpened:last-child {
-	margin-bottom: 24px;
+	overflow: hidden;
 }
 
 .thirdLevel {
 	display: block;
+	overflow: hidden;
+
+	width: 200px;
 
 	margin-bottom: 10px;
 
 	cursor: pointer;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 
 	color: var(--gray-dark);
 

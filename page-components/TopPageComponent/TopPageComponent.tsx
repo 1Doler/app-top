@@ -14,6 +14,7 @@ import styles from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "../../interfaces/toppage.interface";
 import { useEffect, useReducer } from "react";
 import { sortReducer } from "../../reducer/sort.reducer";
+import { useScrollY } from "../../hooks/useScrollY";
 
 export const TopPageComponents = ({
   firstCategory,
@@ -27,6 +28,9 @@ export const TopPageComponents = ({
       sort: SortEnum.Rating,
     }
   );
+
+  const y = useScrollY();
+
   useEffect(() => {
     console.log("useEffect");
     dispathSort({ type: sort, products });
@@ -35,7 +39,6 @@ export const TopPageComponents = ({
   const setSort = (sort: SortEnum) => {
     dispathSort({ type: sort, products });
   };
-  console.log(products);
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -51,7 +54,7 @@ export const TopPageComponents = ({
         {sortProducts &&
           sortProducts.map((p) => (
             <div key={p._id}>
-              <Product product={p} />
+              <Product product={p} layout />
             </div>
           ))}
       </div>

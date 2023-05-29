@@ -46,6 +46,16 @@
 	grid-column: ratestart/end;
 }
 
+.ratingTitle a {
+	text-decoration: none;
+
+	color: var(--primary);
+
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 19px;
+}
+
 .product hr{
 	grid-column: start/end;
 
@@ -144,24 +154,11 @@
 }
 
 .review{
-	transition: all 0.2s;
-}
-
-.rewiewclose{
 	overflow: hidden;
 
-	max-height: 0;
-	margin-bottom: 0;
-	padding: 0;
-}
-
-.rewiewopen {
-	overflow: hidden;
-	
-	max-height: auto;
-	margin-top: -34px;
-	margin-bottom: 30px;
 	padding: 30px;
+
+	transition: all 0.2s;
 }
 
 .review hr {

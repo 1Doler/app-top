@@ -8,11 +8,15 @@ import ArrowIcon from "./arrow_icon.svg";
 
 import styles from "./Button.module.css";
 import cn from "classnames";
+import { motion } from "framer-motion";
 
 interface ButtonProps
-  extends DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
+  extends Omit<
+    DetailedHTMLProps<
+      ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    >,
+    "onAnimationStart" | "onDragStart" | "onDragEnd" | "onDrag" | "ref"
   > {
   apperance: "primary" | "ghost";
   children: ReactNode;
@@ -27,14 +31,15 @@ export const Button = ({
   ...props
 }: ButtonProps): JSX.Element => {
   return (
-    <button
+    <motion.button
       className={cn(styles.button, className, styles[apperance])}
       {...props}
+      whileHover={{ scale: 1.05 }}
     >
       {children}
       {arrow != "none" && (
         <ArrowIcon className={cn(styles.arrow, styles[arrow])} />
       )}
-    </button>
+    </motion.button>
   );
 };
