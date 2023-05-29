@@ -15,6 +15,9 @@ import { TopPageComponents } from "../../page-components/index";
 import { API } from "../../helpers/api";
 
 function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
+  if (!page) {
+    return <div>hi</div>;
+  }
   return (
     <>
       <Head>
