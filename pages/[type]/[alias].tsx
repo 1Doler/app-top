@@ -3,7 +3,7 @@ import axios from "axios";
 import Head from "next/head";
 
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { ParsedUrlQuery } from "node:querystring";
+import { ParsedUrlQuery } from "querystring";
 
 import { withLayout } from "../../layout/Layout";
 import { IMenuItem } from "../../interfaces/menu.interface";

@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import axios from "axios";
 import { IMenuItem } from "../../interfaces/menu.interface";
 import { firstLevelMenuItem } from "../../helpers/helpers";
-import { ParsedUrlQuery } from "node:querystring";
+import { ParsedUrlQuery } from "querystring";
 import { API } from "../../helpers/api";
 
 function Type({ firstCategory }: TypeProps): JSX.Element {
