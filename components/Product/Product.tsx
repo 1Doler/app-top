@@ -10,7 +10,6 @@ import {
 import { IProduct } from "../../interfaces/product.interface";
 import { Htags, Card, Rating, Tag, P, Button, ReviewForm } from "../index";
 import { declOfNum, priceRu } from "../../helpers/helpers";
-import cn from "classnames";
 import { Review } from "../Review/Review";
 
 import { motion } from "framer-motion";

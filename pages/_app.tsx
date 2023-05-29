@@ -3,7 +3,7 @@ import Head from "next/head";
 
 import "../styles/global.css";
 
-function App({ Component, pageProps }: AppProps): JSX.Element {
+function App({ Component, pageProps, router }: AppProps): JSX.Element {
   return (
     <>
       <Head>
@@ -13,6 +13,11 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap"
         />
+        <meta
+          property="og:url"
+          content={process.env.NEXT_PUBLIC_DOMAIN + router.asPath}
+        />
+        <meta property="og:locale" content="ru_RU" />
       </Head>
       <Component {...pageProps} />
     </>

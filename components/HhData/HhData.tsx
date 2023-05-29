@@ -1,5 +1,5 @@
 import styles from "./HhData.module.css";
-import { DetailedHTMLProps, HtmlHTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
 
 import RateIcon from "./rate.svg";
 

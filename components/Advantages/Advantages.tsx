@@ -1,5 +1,5 @@
 import styles from "./Advantages.module.css";
-import { DetailedHTMLProps, HtmlHTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
 import cn from "classnames";
 import { Htags } from "../Htags/Htags";
 import LikeIcon from "./like.svg";

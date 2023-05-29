@@ -1,5 +1,5 @@
 import styles from "./Skills.module.css";
-import { DetailedHTMLProps, HtmlHTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HtmlHTMLAttributes } from "react";
 import cn from "classnames";
 import { Tag } from "../Tag/Tag";
 import { Htags } from "../Htags/Htags";

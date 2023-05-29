@@ -3,11 +3,10 @@ import {
   DetailedHTMLProps,
   ForwardedRef,
   InputHTMLAttributes,
-  ReactNode,
   forwardRef,
 } from "react";
 import cn from "classnames";
-import { FieldError, UseFormRegister } from "react-hook-form";
+import { FieldError } from "react-hook-form";
 
 interface InputProps
   extends DetailedHTMLProps<
