@@ -33,7 +33,7 @@
 
 		grid-template-areas: "header" "body" "footer";
 
-		gap: 10px;
+		gap: 0;
 	}
 
 	.sidebar {

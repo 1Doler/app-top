@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-import { format } from "date-fns";
+import LogoIcon from "./logo.svg";
 
 import styles from "./Footer.module.css";
 import cn from "classnames";
@@ -11,9 +11,12 @@ interface FooterProps
 export const Footer = ({ className, ...props }: FooterProps) => {
   return (
     <footer className={cn(className, styles.wrapper)} {...props}>
-      <div>OwlTop © 2020 - {format(new Date(), "yyyy")} Все права защищены</div>
-      <a>Пользовательское соглашение</a>
-      <a>Политика конфиденциальности</a>
+      <LogoIcon className={styles.icon} />
+      <div className={styles.text}>
+        Данный проект является тестовым
+        <div>{""}</div> На данном сайте невозможно приобрести тот или иной
+        продукт
+      </div>
     </footer>
   );
 };

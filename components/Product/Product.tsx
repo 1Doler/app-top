@@ -71,7 +71,10 @@ export const Product = motion(
               <div>{priceRu(product.price)}</div>
             </div>
             <div className={styles.credit}>
-              <div>{priceRu(product.credit)}</div>
+              <div>
+                {priceRu(product.credit)}
+                <span className={styles.m}>/мес</span>
+              </div>
             </div>
             <div className={styles.rating}>
               <Rating rating={product.reviewAvg ?? product.initialRating} />
@@ -98,13 +101,18 @@ export const Product = motion(
               {product.description}
             </P>
             <div className={styles.feature}>
-              {product.characteristics.map((c) => (
-                <div className={styles.characteristics} key={c.name}>
-                  <span className={styles.characteristicsName}>{c.name}</span>
-                  <span className={styles.characteristicsDots}>{}</span>
-                  <span className={styles.characteristicsValue}>{c.value}</span>
-                </div>
-              ))}
+              {product.characteristics.map((c) => {
+                console.log(c);
+                return (
+                  <div className={styles.characteristics} key={c.name}>
+                    <span className={styles.characteristicsName}>{c.name}</span>
+                    <span className={styles.characteristicsDots}>{}</span>
+                    <span className={styles.characteristicsValue}>
+                      {c.value}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
             <div className={styles.advBlock}>
               {product.advantages && (
@@ -130,6 +138,7 @@ export const Product = motion(
             <div className={styles.actions}>
               <Button apperance="primary">Узнать&nbsp;подробнее</Button>
               <Button
+                className={styles.btn}
                 apperance="ghost"
                 arrow={isReviewOpened === "open" ? "down" : "right"}
                 onClick={() =>

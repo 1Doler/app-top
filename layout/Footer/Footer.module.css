@@ -1,38 +1,41 @@
 .wrapper{
 	display: grid;
+	align-items: center;
 
 	padding: 25px 30px ;
 
 	background: var(--primary);
-   
 
 	font-style: normal;
-	grid-template-columns: 1fr auto auto;
-	gap: 20px;
+	grid-template-columns: 1fr [icon] auto [iconend] 30px [text] auto [textend] 1fr;
+}
+
+.icon {
+	grid-column: icon/iconend;
+}
+
+.text, .textDescription {
+	grid-column: text/textend;
+}
+
+.textDescription {
+	align-items: end;
 }
 
 .wrapper div{
+	margin-top: 6px;
+	
 	color: var(--white);
-    
-	font-size: 16px;
-	font-weight: 400;
+	
+	font-size: 18px;
+	font-weight: bold;
+
 }
 
-.wrapper a{
-	cursor: pointer;
-     
-	color: var(--white);
-    
-	font-size: 16px;
-	font-weight: 400;
-}
-
-.wrapper a:hover {
-	color: var(--grey-light);
-}
 
 @media (width <= 760px) {
 	.wrapper{
 		grid-template-columns: 1fr;
+		justify-items: center
 	}
 }
