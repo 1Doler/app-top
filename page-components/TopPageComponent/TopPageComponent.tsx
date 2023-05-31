@@ -32,7 +32,6 @@ export const TopPageComponents = ({
   const y = useScrollY();
 
   useEffect(() => {
-    console.log("useEffect");
     dispathSort({ type: sort, products });
   }, [products]);
 

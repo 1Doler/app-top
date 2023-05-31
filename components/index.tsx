@@ -15,3 +15,6 @@ export * from "./Product/Product";
 export * from "./Rating/Rating";
 export * from "./ReviewForm/ReviewForm";
 export * from "./Up/Up";
+export * from "./HomeHeader/HomeHeader";
+export * from "./PositionMous/PositionMous";
+export * from "./AdvantagesHeader/AdvantagesHeader";

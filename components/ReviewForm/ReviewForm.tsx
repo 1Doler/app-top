@@ -45,7 +45,6 @@ export const ReviewForm = ({
       } else {
         setIsError("Произошла ошибка");
       }
-      console.log(data);
     } catch (e) {
       setIsError("Произошла обишка");
     }

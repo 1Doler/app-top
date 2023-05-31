@@ -7,6 +7,7 @@ import { Footer } from "./Footer/Footer";
 import styles from "./Layout.module.css";
 import { AppContextProvider, IAppContext } from "../context/app.context";
 import { Up } from "../components";
+import { MovingObject } from "../components/MovingObject/MovingObject";
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
+      <MovingObject />
       <Header className={styles.header} />
       <Sidebar className={styles.sidebar} />
       <div className={styles.body}>{children}</div>

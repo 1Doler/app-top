@@ -102,7 +102,6 @@ export const Product = motion(
             </P>
             <div className={styles.feature}>
               {product.characteristics.map((c) => {
-                console.log(c);
                 return (
                   <div className={styles.characteristics} key={c.name}>
                     <span className={styles.characteristicsName}>{c.name}</span>

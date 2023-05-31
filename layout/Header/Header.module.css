@@ -1,11 +1,12 @@
 .header {
 	display: none;
-	grid-template-columns: 1fr 40px;
-	gap: 10px;
-
 	align-items: center;
 
-	margin: 15px 15px 0; 
+	margin: 15px 15px 0;
+
+	background: var(--white);
+	grid-template-columns: 1fr 40px;
+	gap: 10px; 
 }
 
 .mobileMenu {
@@ -29,7 +30,7 @@
 }
 
 
-@media (width <= 980px) {
+@media (width <= 11980px) {
 	.header {
 		display: grid !important;
 	}

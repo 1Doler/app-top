@@ -8,6 +8,7 @@ import LogoIcon from "./logo.svg";
 import { ButtonIcon } from "../../components/ButtonIcon/ButtonIcon";
 import { motion } from "framer-motion";
 import { Sidebar } from "../Sidebar/Sidebar";
+import Link from "next/link";
 
 interface HeaderProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
@@ -36,7 +37,9 @@ export const Header = ({ className, ...props }: HeaderProps) => {
 
   return (
     <header className={cn(className, styles.header)} {...props}>
-      <LogoIcon />
+      <Link href={"/"}>
+        <LogoIcon />
+      </Link>
       <ButtonIcon
         apperance="white"
         icon="menu"
