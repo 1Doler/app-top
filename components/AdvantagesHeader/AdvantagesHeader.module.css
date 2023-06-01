@@ -1,47 +1,54 @@
-.title {
+.title, .titleLearn {
 	margin: 84px 0 34px;
 
-	font-size: 46px;
+	text-align: center;
+
+	font-size: 40px;
 	font-weight: 600;
 	line-height: 46px;
-
-	/* or 100% */
-
 }
 
 .wrapper {
 	display: grid;
-	grid-template-columns: [prog] 0.5fr [message] 0.5fr [spin] 0.5fr [price] 0.5fr [pc] 0.5fr [refund] 0.5fr [calendar] 0.5fr [refundend] 0.5fr [end];
-	gap: 30px;
+	grid-template-columns: 50px [prog] 0.5fr [message] 0.5fr [spin] 0.5fr [price] 0.5fr [pc] 0.5fr [refund] 0.5fr [calendar] 0.5fr [refundend] 0.5fr [end] 50px;
+	gap: 40px;
 
 	align-items: stretch;
- }
+}
 
- .prog{
-    grid-column: prog/spin;
- }
- .spin{
-    grid-column: spin/pc;
- }
- .pc{
-    grid-column: pc/calendar;
- }
- .calendar{
-    grid-column: calendar/end;
- }
- .message{
-    grid-column: message/price;
- }
- .price{
-    grid-column: price/refund;
- }
- .refund{
-    grid-column: refund/refundend;
- }
+.prog{
+	grid-column: prog/spin;
+}
+
+.spin{
+	grid-column: spin/pc;
+}
+
+.pc{
+	grid-column: pc/calendar;
+}
+
+.calendar{
+	grid-column: calendar/end;
+}
+
+.message{
+	grid-column: message/price;
+}
+
+.price{
+	grid-column: price/refund;
+}
+
+.refund{
+	grid-column: refund/refundend;
+}
 
 
 .item {
 	display: grid;
+
+	height: 100%;
 	padding: 50px 35px 30px;
 
 	border-radius: 30px;
@@ -53,14 +60,15 @@
 }
 
 .icon {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .titleItem {
+	margin-bottom: 10px;
+
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 18px;
-    margin-bottom: 10px;
 }
 
 .descriptionItem {
@@ -69,17 +77,60 @@
 	line-height: 15px;
 }
 
+.learn {
+	display: grid;
+	grid-template-columns:  1fr auto;
+	gap: 100px;
+
+	padding: 50px 100px;
+}
+
+.imgLearn{
+	padding: 50px;
+
+	border-radius: 50px;
+	background: var(--white);
+	grid-column: 1;
+	grid-row: 1 ;
+}
+
+.textLearn {
+	padding: 0 30px;
+
+	border-radius: 50px;
+	background-color: var(--primary);
+}
+
+.boy {
+	width: 200px;
+
+	transform: rotate(10deg);
+}
+
+.learn p, .learn h2{
+	color: white
+}
+
+.descriptionLearn {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 15px;
+}
+
+
 @media (width<=950px) {
-    .wrapper {
-        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    }
-    .prog,
-    .spin,
-    .pc,
-    .calendar,
-    .message,
-    .price,
-    .refund {
-        grid-column: initial;
-    }
+	.wrapper {
+		margin: 0 50px;
+		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+	}
+
+	.prog,
+	.spin,
+	.pc,
+	.calendar,
+	.message,
+	.price,
+	.refund {
+		grid-column: initial;
+	}
 }

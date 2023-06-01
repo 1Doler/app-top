@@ -5,6 +5,7 @@ import { advantagesData, icons } from "./AdvantagesData";
 import { Card } from "../Card/Card";
 
 import { motion } from "framer-motion";
+import { Htags } from "../Htags/Htags";
 
 export const AdvantagesHeader = () => {
   const itemAnimation = {
@@ -20,31 +21,63 @@ export const AdvantagesHeader = () => {
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ amount: 0.2 }}
-    >
-      <p className={styles.title}>Обучение – это удобно и результативно</p>
-      <div className={styles.wrapper}>
-        {advantagesData.map((a, index) => {
-          const IconComp = icons[a.icon];
-          return (
-            <motion.div
-              className={cn(styles[a.icon])}
-              key={a.icon}
-              variants={itemAnimation}
-              custom={index + 1}
-            >
-              <Card color="white" className={cn(styles.item, styles[a.icon])}>
-                <IconComp className={styles.icon} />
-                <p className={styles.titleItem}>{a.title}</p>
-                <p className={styles.descriptionItem}>{a.description}</p>
-              </Card>
-            </motion.div>
-          );
-        })}
+    <>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.2, once: true }}
+      >
+        <motion.p className={styles.title} variants={itemAnimation} custom={1}>
+          Обучение – это удобно и результативно
+        </motion.p>
+        <div className={styles.wrapper}>
+          {advantagesData.map((a, index) => {
+            const IconComp = icons[a.icon];
+            return (
+              <motion.div
+                className={cn(styles[a.icon])}
+                key={a.icon}
+                variants={itemAnimation}
+                custom={index + 2}
+                whileHover={{ scale: 1.1 }}
+              >
+                <Card color="white" className={cn(styles.item, styles[a.icon])}>
+                  <IconComp className={styles.icon} />
+                  <p className={styles.titleItem}>{a.title}</p>
+                  <p className={styles.descriptionItem}>{a.description}</p>
+                </Card>
+              </motion.div>
+            );
+          })}
+        </div>
+      </motion.div>
+
+      <div className={styles.learn}>
+        <div className={styles.textLearn}>
+          <h2 className={styles.titleLearn}>Выбирай свой формат обучения</h2>
+          <p className={styles.descriptionLearn}>
+            Смотрите видео-лекции в удобное для вас время, обучайтесь на
+            тренажере, участвуйте в интенсивных воркшопах с командой или
+            проходите курс с гибким расписанием. На нашей платформе каждый
+            найдет подходящий формат.
+          </p>
+        </div>
+        <div className={styles.imgLearn}>
+          <motion.img
+            src="/boy.png"
+            alt="boy"
+            className={styles.boy}
+            animate={{
+              y: [20, -20],
+              transition: {
+                duration: 2,
+                repeat: Infinity,
+                repeatType: "reverse",
+              },
+            }}
+          />
+        </div>
       </div>
-    </motion.div>
+    </>
   );
 };

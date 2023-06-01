@@ -31,11 +31,15 @@
 	grid-column: title/titleend;
 }
 
-.img{
+.wrapperImg{
 	grid-column: img/imgend;
 	grid-row: 1/span 2;
+
 }
 
+.img {
+	width: 600px;
+}
 
 .sc {
 	color: var(--primary)
@@ -46,7 +50,7 @@
 		justify-items: center;
 	}
 
-	.img{
+	.wrapperImg{
 		grid-column: start/end;
 	}
 
@@ -56,5 +60,11 @@
 
 	.description{
 		grid-column: start/end;
+	}
+}
+
+@media (width <=670px) {
+	.wrapperImg {
+		display: none;
 	}
 }

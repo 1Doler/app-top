@@ -40,14 +40,17 @@ export const HomeHeader = (): JSX.Element => {
         Курсы и видео-лекции по дизайну, программированию и многим другим
         направлениям
       </motion.p>
-      <motion.img
-        src="/courses.png"
-        width={600}
-        className={styles.img}
+      <motion.div
         custom={2}
         variants={variantsImg}
-        animate={{ x: position.x / 80, y: position.y / 80 }}
-      />
+        className={styles.wrapperImg}
+      >
+        <motion.img
+          className={styles.img}
+          src="/courses.png"
+          animate={{ x: position.x / 80, y: position.y / 80 }}
+        />
+      </motion.div>
     </motion.div>
   );
 };
