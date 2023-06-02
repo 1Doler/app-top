@@ -5,7 +5,6 @@ import { advantagesData, icons } from "./AdvantagesData";
 import { Card } from "../Card/Card";
 
 import { motion } from "framer-motion";
-import { Htags } from "../Htags/Htags";
 
 export const AdvantagesHeader = () => {
   const itemAnimation = {
@@ -13,13 +12,22 @@ export const AdvantagesHeader = () => {
       y: 100,
       opacity: 0,
     },
-    visible: (custom) => ({
+    visible: custom => ({
       y: 0,
       opacity: 1,
       transition: { delay: custom * 0.2 },
     }),
   };
-
+  const timeAnimation = {
+    hidden: {
+      x: -1000,
+    },
+    visible: custom => ({
+      opacity: 1,
+      x: 0,
+      transition: { delay: custom * 0.2, duration: 0.4 },
+    }),
+  };
   return (
     <>
       <motion.div
@@ -52,8 +60,13 @@ export const AdvantagesHeader = () => {
         </div>
       </motion.div>
 
-      <div className={styles.learn}>
-        <div className={styles.textLearn}>
+      <motion.div className={styles.learn} whileInView="visible" viewport={{}}>
+        <motion.div
+          className={styles.textLearn}
+          variants={timeAnimation}
+          initial={{ x: 1000, opacity: 0 }}
+          custom={2}
+        >
           <h2 className={styles.titleLearn}>Выбирай свой формат обучения</h2>
           <p className={styles.descriptionLearn}>
             Смотрите видео-лекции в удобное для вас время, обучайтесь на
@@ -61,8 +74,13 @@ export const AdvantagesHeader = () => {
             проходите курс с гибким расписанием. На нашей платформе каждый
             найдет подходящий формат.
           </p>
-        </div>
-        <div className={styles.imgLearn}>
+        </motion.div>
+        <motion.div
+          className={styles.imgLearn}
+          variants={timeAnimation}
+          initial={{ x: -1000 }}
+          custom={2}
+        >
           <motion.img
             src="/boy.png"
             alt="boy"
@@ -76,8 +94,8 @@ export const AdvantagesHeader = () => {
               },
             }}
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };

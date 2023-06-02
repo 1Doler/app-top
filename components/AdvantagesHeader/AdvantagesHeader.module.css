@@ -81,8 +81,13 @@
 	display: grid;
 	grid-template-columns:  1fr auto;
 	gap: 100px;
-
+	overflow: hidden;
 	padding: 50px 100px;
+}
+
+.titleLearn {
+	margin: 0;
+	margin-bottom: 30px;
 }
 
 .imgLearn{
@@ -95,10 +100,11 @@
 }
 
 .textLearn {
-	padding: 0 30px;
+	padding: 50px;
 
 	border-radius: 50px;
 	background-color: var(--primary);
+	box-shadow: 0 4px 4px rgb(0 0 0 / 4%);
 }
 
 .boy {
@@ -113,7 +119,7 @@
 
 .descriptionLearn {
 	font-size: 18px;
-	font-weight: 400;
+	font-weight: 300;
 	line-height: 15px;
 }
 

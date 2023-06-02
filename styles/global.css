@@ -33,7 +33,3 @@ body{
 	color: #8EBF42 !important;
 	background-color: initial !important;
 }
-
-*::selection {
-	color: #8EBF42 !important;
-}
