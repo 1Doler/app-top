@@ -4,8 +4,7 @@ import { GetStaticProps } from "next";
 import axios from "axios";
 import { IMenuItem } from "../interfaces/menu.interface";
 import { API } from "../helpers/api";
-import { AdvantagesHeader, HomeHeader, Htags } from "../components/index";
-import { ITopPage } from "../interfaces/toppage.interface";
+import { AdvantagesHeader, HomeHeader } from "../components/index";
 
 function Home(): JSX.Element {
   return (

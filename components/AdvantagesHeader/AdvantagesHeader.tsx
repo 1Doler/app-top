@@ -25,7 +25,7 @@ export const AdvantagesHeader = () => {
     visible: custom => ({
       opacity: 1,
       x: 0,
-      transition: { delay: custom * 0.2, duration: 0.4 },
+      transition: { delay: custom * 0.2, duration: 0.6 },
     }),
   };
   return (
@@ -62,6 +62,30 @@ export const AdvantagesHeader = () => {
 
       <motion.div className={styles.learn} whileInView="visible" viewport={{}}>
         <motion.div
+          className={cn(styles.textLearn, styles.knowleage)}
+          variants={timeAnimation}
+          initial={{ x: 1000, opacity: 0 }}
+          custom={2}
+        >
+          <h2 className={styles.titleLearn}>Актуальные знания</h2>
+          <p className={styles.descriptionLearn}>
+            Мы понимаем, как быстро меняются тренды и появляются обновления.
+            Поэтому мы всегда следим за всеми новинками, добавляем в программу
+            то, что требуют топовые компании. Мы предлагаем вам только
+            актуальные знания, чтобы вы были впереди планеты всей.
+          </p>
+        </motion.div>
+        <motion.div
+          className={cn(styles.imgLearn, styles.knowleageImg)}
+          variants={timeAnimation}
+          initial={{ x: -1000, opacity: 0 }}
+          custom={2}
+        >
+          <motion.img src="/learning.png" alt="boy" className={styles.boy} />
+        </motion.div>
+      </motion.div>
+      <motion.div className={styles.learn} whileInView="visible" viewport={{}}>
+        <motion.div
           className={styles.textLearn}
           variants={timeAnimation}
           initial={{ x: 1000, opacity: 0 }}
@@ -78,7 +102,7 @@ export const AdvantagesHeader = () => {
         <motion.div
           className={styles.imgLearn}
           variants={timeAnimation}
-          initial={{ x: -1000 }}
+          initial={{ x: -1000, opacity: 0 }}
           custom={2}
         >
           <motion.img

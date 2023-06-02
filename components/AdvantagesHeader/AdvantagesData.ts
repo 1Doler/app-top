@@ -49,7 +49,7 @@ export const advantagesData: IAdvantagesData[] = [
   },
   {
     icon: "message",
-    title: "Прямая связь с опытными программистами",
+    title: "Прямая связь с преподователями",
     description: "Задавайте вопросы и отправляйте свои решения на проверку",
   },
   {

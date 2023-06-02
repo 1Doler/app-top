@@ -1,10 +1,10 @@
 .sidebar {
 	display: grid;
+	overflow-y: hidden;
 	align-content: start;
-	gap: 20px;
-	justify-items: center;
 
 	justify-content: center;
-
+	gap: 20px;
+	justify-items: center;
 }
 

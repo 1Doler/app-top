@@ -3,9 +3,9 @@
 
 	text-align: center;
 
-	font-size: 40px;
 	font-weight: 600;
-	line-height: 46px;
+	font-size: calc(var(--index)*2.2);
+	line-height: calc(var(--index)*2);
 }
 
 .wrapper {
@@ -81,10 +81,15 @@
 	display: grid;
 	grid-template-columns:  1fr auto;
 	gap: 100px;
-	overflow: hidden;
-	padding: 50px 100px;
-}
 
+	overflow: hidden;
+
+	padding: 50px 100px;
+	justify-items: center;
+}
+.learn:last-child {
+	padding-top: 0;
+}
 .titleLearn {
 	margin: 0;
 	margin-bottom: 30px;
@@ -95,15 +100,16 @@
 
 	border-radius: 50px;
 	background: var(--white);
-	grid-column: 1;
+	grid-column: 2;
 	grid-row: 1 ;
 }
 
 .textLearn {
 	padding: 50px;
+	grid-column: 1;
 
 	border-radius: 50px;
-	background-color: var(--primary);
+	background-color: var(--primary-hover);
 	box-shadow: 0 4px 4px rgb(0 0 0 / 4%);
 }
 
@@ -116,18 +122,38 @@
 .learn p, .learn h2{
 	color: white
 }
+.knowleage{
+	grid-column: 2;
+}
+.knowleageImg{
+	grid-column: 1;
+}
 
 .descriptionLearn {
-	font-size: 18px;
+	font-size: calc(var(--index)*0.8);
+	line-height: calc(var(--index)*1.2);
 	font-weight: 300;
-	line-height: 15px;
 }
 
 
 @media (width<=950px) {
 	.wrapper {
-		margin: 0 50px;
+		margin: 10px;
 		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+	}
+
+	.learn{
+		grid-template-columns: auto;
+		padding: 50px 0;
+	}
+
+	.textLearn{
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.imgLearn{
+		display: none;
 	}
 
 	.prog,

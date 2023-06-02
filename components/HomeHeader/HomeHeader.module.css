@@ -5,8 +5,9 @@
 	min-height: 790px;
 	padding: 30px;
 
-	background: url('/bgpng.png');
 	border-radius: 50px;
+
+	background: url('/bgpng.png');
 	background-position: center;
 	background-size: no-repeat;
 	background-size: cover;
@@ -14,24 +15,27 @@
 }
 
 .title, .text{
+	align-self: end;
+
 	text-align: center;
 
 	color: var(--white);
 
-	font-size: 46px;
+	font-size: calc(var(--index)*2.2);
 	font-weight: bold;
 	grid-column: title/titleend;
-	align-self: end;
 }
 
 .description{
+	align-self: start;
+
 	margin-top: 40px;
 
 	text-align: center;
-	align-self: start;
+
 	color: var(--white);
 
-	font-size: 20px;
+	font-size: calc(var(--index)*0.8);
 	font-weight: 400;
 	grid-column: title/titleend;
 }
@@ -51,7 +55,7 @@
 
 	color: var(--green-light);
 
-	font-size: 46px;
+	font-size: calc(var(--index)*2.2);
 	font-weight: bold;
 	grid-column: title/titleend;
 }
