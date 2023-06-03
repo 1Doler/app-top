@@ -15,6 +15,7 @@ import { TopPageComponents } from "../../page-components/index";
 import { API } from "../../helpers/api";
 
 function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
+  console.log(page);
   if (!page) {
     return <div>hi</div>;
   }
@@ -54,7 +55,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       firstCategory: m.id,
     });
     paths = paths.concat(
-      menu.flatMap((s) => s.pages.map((p) => `/${m.route}/${p.alias}`))
+      menu.flatMap(s => s.pages.map(p => `/${m.route}/${p.alias}`))
     );
   }
 
@@ -73,7 +74,7 @@ export const getStaticProps: GetStaticProps<TopPageProps> = async ({
     };
   }
   const firstCategoryItem = firstLevelMenuItem.find(
-    (m) => m.route === params.type
+    m => m.route === params.type
   );
   if (!firstCategoryItem) {
     return {

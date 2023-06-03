@@ -12,7 +12,7 @@ export const firstLevelMenuItem: IFirstLevelMenuItem[] = [
     icon: <CoursesIcon />,
     id: TopLevelCategory.Courses,
   },
-  {
+  /*  {
     route: "services",
     name: "Сервисы",
     icon: <ServicesIcon />,
@@ -29,7 +29,7 @@ export const firstLevelMenuItem: IFirstLevelMenuItem[] = [
     name: "Продукты",
     icon: <ProductsIcon />,
     id: TopLevelCategory.Products,
-  },
+  }, */
 ];
 
 export const priceRu = (price: number) =>

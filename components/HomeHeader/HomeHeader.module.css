@@ -35,7 +35,7 @@
 
 	color: var(--white);
 
-	font-size: calc(var(--index)*0.8);
+	font-size: calc(var(--index)*1.2);
 	font-weight: 400;
 	grid-column: title/titleend;
 }
@@ -80,6 +80,10 @@
 }
 
 @media (width <=670px) {
+	.header {
+		min-height: 500px;
+	}
+
 	.wrapperImg {
 		display: none;
 	}

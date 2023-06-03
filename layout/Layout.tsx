@@ -12,10 +12,13 @@ import { MovingObject } from "../components/MovingObject/MovingObject";
 interface LayoutProps {
   children: ReactNode;
 }
+const isBrouser = typeof window !== undefined;
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <div className={styles.wrapper}>
-      <MovingObject />
+      {!isBrouser && /Mobi|Android/i.test(navigator.userAgent) ? null : (
+        <MovingObject />
+      )}
       <Header className={styles.header} />
       <Sidebar className={styles.sidebar} />
       <div className={styles.body}>{children}</div>

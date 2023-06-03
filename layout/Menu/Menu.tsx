@@ -17,7 +17,7 @@ export const Menu = () => {
   const openSecondLevel = (secondCategory: string) => {
     setMenu &&
       setMenu(
-        menu.map((m) => {
+        menu.map(m => {
           if (m._id.secondCategory === secondCategory) {
             m.isOpened = !m.isOpened;
           }
@@ -55,16 +55,14 @@ export const Menu = () => {
       <>
         {firstLevelMenuItem.map((m: IFirstLevelMenuItem) => (
           <div key={m.route}>
-            <Link href={`/${m.route}`}>
-              <div
-                className={cn(styles.firstLevel, {
-                  [styles.firstLevelActive]: m.id === firstCategory,
-                })}
-              >
-                {m.icon}
-                <span>{m.name}</span>
-              </div>
-            </Link>
+            <div
+              className={cn(styles.firstLevel, {
+                [styles.firstLevelActive]: m.id === firstCategory,
+              })}
+            >
+              {m.icon}
+              <span>{m.name}</span>
+            </div>
             {m.id == firstCategory && buildSecondLevel(m)}
           </div>
         ))}
@@ -75,10 +73,8 @@ export const Menu = () => {
   const buildSecondLevel = (menuItem: IFirstLevelMenuItem) => {
     return (
       <div className={styles.secondBlock}>
-        {menu.map((m) => {
-          if (
-            m.pages.map((p) => p.alias).includes(router.asPath.split("/")[2])
-          ) {
+        {menu.map(m => {
+          if (m.pages.map(p => p.alias).includes(router.asPath.split("/")[2])) {
             m.isOpened = true;
           }
           return (
@@ -109,7 +105,7 @@ export const Menu = () => {
   const buildThirdLevel = (pages: IPageItem[], route: string): JSX.Element => {
     return (
       <>
-        {pages.map((p) => (
+        {pages.map(p => (
           <motion.div key={p._id} variants={variantsChildren}>
             <Link
               href={`/${route}/${p.alias}`}

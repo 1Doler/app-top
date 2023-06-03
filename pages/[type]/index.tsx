@@ -7,15 +7,15 @@ import { firstLevelMenuItem } from "../../helpers/helpers";
 import { ParsedUrlQuery } from "querystring";
 import { API } from "../../helpers/api";
 
-function Type({ firstCategory }: TypeProps): JSX.Element {
-  return <>{firstCategory}</>;
+function Type({ firstCategory, menu }: TypeProps): JSX.Element {
+  return <>{/* <TypePage menu={menu} /> */}</>;
 }
 
 export default withLayout(Type);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: firstLevelMenuItem.map((i) => "/" + i.route),
+    paths: firstLevelMenuItem.map(i => "/" + i.route),
     fallback: true,
   };
 };
@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({
     };
   }
   const firstCategoryItem = firstLevelMenuItem.find(
-    (m) => m.route === params.type
+    m => m.route === params.type
   );
   if (!firstCategoryItem) {
     return {

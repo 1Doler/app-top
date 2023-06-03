@@ -42,14 +42,10 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
         placeholder="Search"
         value={search}
         className={styles.input}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={e => setSearch(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <Button
-        apperance="primary"
-        className={styles.button}
-        onClick={goToSearch}
-      >
+      <Button apperance="primary" className={styles.button}>
         <GlassIcon />
       </Button>
     </div>

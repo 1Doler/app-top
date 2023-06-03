@@ -13,6 +13,7 @@ import { declOfNum, priceRu } from "../../helpers/helpers";
 import { Review } from "../Review/Review";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface ProductProps
   extends DetailedHTMLProps<
@@ -54,7 +55,7 @@ export const Product = motion(
           height: 0,
         },
       };
-
+      console.log(product);
       return (
         <div className={className} {...props} ref={ref}>
           <Card className={styles.product} key={product._id}>
@@ -80,7 +81,7 @@ export const Product = motion(
               <Rating rating={product.reviewAvg ?? product.initialRating} />
             </div>
             <div className={styles.tags}>
-              {product.categories.map((c) => (
+              {product.categories.map(c => (
                 <Tag color="ghost" key={c}>
                   {c}
                 </Tag>
@@ -101,7 +102,7 @@ export const Product = motion(
               {product.description}
             </P>
             <div className={styles.feature}>
-              {product.characteristics.map((c) => {
+              {product.characteristics.map(c => {
                 return (
                   <div className={styles.characteristics} key={c.name}>
                     <span className={styles.characteristicsName}>{c.name}</span>
@@ -135,13 +136,15 @@ export const Product = motion(
             <hr color="#EBEBEB" className={styles.hr2} />
 
             <div className={styles.actions}>
-              <Button apperance="primary">Узнать&nbsp;подробнее</Button>
+              <a href={product.link} target="_blank">
+                <Button apperance="primary">Узнать&nbsp;подробнее</Button>
+              </a>
               <Button
                 className={styles.btn}
                 apperance="ghost"
                 arrow={isReviewOpened === "open" ? "down" : "right"}
                 onClick={() =>
-                  setIsReviewOpened((prev) =>
+                  setIsReviewOpened(prev =>
                     prev === "open" ? "close" : "open"
                   )
                 }
@@ -156,7 +159,7 @@ export const Product = motion(
             initial={"hidden"}
           >
             <Card ref={reviewRef} color="white" className={styles.review}>
-              {product.reviews.map((r) => (
+              {product.reviews.map(r => (
                 <div key={r._id}>
                   <Review rewiew={r} />
                   <hr color="#EBEBEB" className={styles.hr} />

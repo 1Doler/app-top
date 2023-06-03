@@ -3,8 +3,9 @@
 
 	text-align: center;
 
-	font-weight: 600;
 	font-size: calc(var(--index)*2.2);
+
+	font-weight: 600;
 	line-height: calc(var(--index)*2);
 }
 
@@ -87,9 +88,11 @@
 	padding: 50px 100px;
 	justify-items: center;
 }
+
 .learn:last-child {
 	padding-top: 0;
 }
+
 .titleLearn {
 	margin: 0;
 	margin-bottom: 30px;
@@ -122,16 +125,17 @@
 .learn p, .learn h2{
 	color: white
 }
+
 .knowleage{
 	grid-column: 2;
 }
+
 .knowleageImg{
 	grid-column: 1;
 }
 
 .descriptionLearn {
-	font-size: calc(var(--index)*0.8);
-	line-height: calc(var(--index)*1.2);
+	font-size: 16px;
 	font-weight: 300;
 }
 
@@ -144,6 +148,7 @@
 
 	.learn{
 		grid-template-columns: auto;
+
 		padding: 50px 0;
 	}
 
