@@ -14,20 +14,19 @@ class AdblockDetector {
         return new Promise((resolve) => {
             const loop = new Loop(() => {
                 if (this.checkStyles(adElement)) {
-                    clearTimeout(timeoutId);
-                    adElement.remove();
+                    document.removeEventListener("DOMContentLoaded", res)
                     loop.stop();
                     resolve(true);
                 }
             }, INTERVAL);
 
             adElement.className = AD_CLASSES;
-
-            const timeoutId = setTimeout(() => {
-                adElement.remove();
+            const res = () => {
                 loop.stop();
                 resolve(false);
-            }, TIMEOUT);
+            }
+            document.addEventListener("DOMContentLoaded", res)
+
 
             loop.start();
 
