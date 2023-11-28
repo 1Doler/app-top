@@ -57,11 +57,7 @@ export const Product = motion(
           height: 0,
         },
       };
-      useEffect(() => {
-        AdblockDetector.check().then((res) => {
-          console.log(res ? "Блокировщик обнаружен" : "Блокировщик ne обнаружен");
-        })
-      }, [])
+
       return (
         <div className={className} {...props} ref={ref}>
           <Card className={styles.product} key={product._id}>

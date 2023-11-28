@@ -20,11 +20,7 @@ function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
   if (!page) {
     return <div>hi</div>;
   }
-  useEffect(() => {
-    AdblockDetector.check().then((res) => {
-      console.log(res ? "Блокировщик обнаружен" : "Блокировщик ne обнаружен");
-    })
-  }, [])
+
   return (
     <>
       <Head>
