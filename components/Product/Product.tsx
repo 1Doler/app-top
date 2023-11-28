@@ -6,6 +6,7 @@ import {
   useRef,
   useState,
   ForwardedRef,
+  useEffect,
 } from "react";
 import { IProduct } from "../../interfaces/product.interface";
 import { Htags, Card, Rating, Tag, P, Button, ReviewForm } from "../index";
@@ -14,6 +15,7 @@ import { Review } from "../Review/Review";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import AdblockDetector from "../../hooks/adblock/adblock-detector";
 
 interface ProductProps
   extends DetailedHTMLProps<
@@ -55,7 +57,11 @@ export const Product = motion(
           height: 0,
         },
       };
-      console.log(product);
+      useEffect(() => {
+        AdblockDetector.check().then((res) => {
+          console.log(res ? "Блокировщик обнаружен" : "Блокировщик ne обнаружен");
+        })
+      }, [])
       return (
         <div className={className} {...props} ref={ref}>
           <Card className={styles.product} key={product._id}>

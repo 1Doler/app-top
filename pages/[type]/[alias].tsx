@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import Head from "next/head";
 
@@ -13,12 +13,18 @@ import { IProduct } from "../../interfaces/product.interface";
 import { firstLevelMenuItem } from "../../helpers/helpers";
 import { TopPageComponents } from "../../page-components/index";
 import { API } from "../../helpers/api";
+import AdblockDetector from "../../hooks/adblock/adblock-detector";
 
 function TopPage({ firstCategory, page, products }: TopPageProps): JSX.Element {
-  console.log(page);
+
   if (!page) {
     return <div>hi</div>;
   }
+  useEffect(() => {
+    AdblockDetector.check().then((res) => {
+      console.log(res ? "Блокировщик обнаружен" : "Блокировщик ne обнаружен");
+    })
+  }, [])
   return (
     <>
       <Head>
